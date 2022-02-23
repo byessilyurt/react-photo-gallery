@@ -2,8 +2,9 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
 import "firebase/compat/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getStorage } from "firebase/storage";
+
+// Create a reference to the file whose metadata we want to retrieve
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,5 +21,6 @@ const app = firebase.initializeApp(firebaseConfig);
 const firebaseStorage = firebase.storage();
 const firebaseFireStore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+const storage = getStorage();
 
-export { app, firebaseStorage, firebaseFireStore, timestamp };
+export { app, firebaseStorage, firebaseFireStore, timestamp, storage };
